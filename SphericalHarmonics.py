@@ -5,9 +5,21 @@ import plotly.io as pio
 pio.renderers.default = 'browser' 
 
 
+"""
+Spherical Harmonics Visualizer
 
-def Plot3DArmonicos(l,m,n=100, show=False, save_html=None):
+This script calculates and visualizes spherical harmonics Y_l^m(θ, φ)
+using numpy, scipy, and Plotly.
+
+You can modify the quantum numbers `l` and `m` to explore different harmonics.
+"""
+
+
+
+
+def Plot3DHarmonics(l,m,n=100, show=False, save_html=None):
     
+    #Creation of the grid
     theta = np.linspace(0, np.pi, n)
     phi = np.linspace(0, 2*np.pi, n)
     theta_grid, phi_grid = np.meshgrid(theta, phi)
@@ -31,13 +43,15 @@ def Plot3DArmonicos(l,m,n=100, show=False, save_html=None):
 
     max_r_val = np.max(r) if r.size > 0 and np.any(r) else 0
 
+    #Creation of the plot
+
     plot_surfacecolor = np.real(A)
     plot_colorscale = 'Turbo' 
     plot_showscale = True
     abs_max_phase_val = np.max(np.abs(A)) if max_r_val > 0 else 1.0 
     plot_cmin = -abs_max_phase_val
     plot_cmax = abs_max_phase_val
-    colorbar_title = "Amplitud"
+    colorbar_title = "Amplitude"
 
 
 
@@ -53,7 +67,7 @@ def Plot3DArmonicos(l,m,n=100, show=False, save_html=None):
         lightposition=dict(x=1000, y=1000, z=1000)
     )])
 
-    title_str = f"Armónicos Esféricos: (l={l}, m={m})"
+    title_str = f"Spherical Harmonics: (l={l}, m={m})"
 
     fig.update_layout(
         title=dict(text=title_str, x=0.5, y=0.95, font_size=16),
@@ -75,4 +89,4 @@ def Plot3DArmonicos(l,m,n=100, show=False, save_html=None):
         
     return fig
 
-Plot3DArmonicos(3,2,100,True)
+Plot3DHarmonics(3,2,100,True) #Example
