@@ -4,7 +4,7 @@ This project provides an interactive 3D visualization of **spherical harmonics**
 
 ## 🌐 Description
 
-The script computes and renders spherical harmonics \( Y_l^m(\theta, \phi) \) for given values of quantum numbers `l` and `m`. The visualization is generated using Plotly's 3D surface plotting capabilities, allowing for intuitive exploration of the angular part of solutions to the Laplace and Schrödinger equations in spherical coordinates.
+The script computes and renders spherical harmonics $Y_l^m(\theta, \phi)$ for given values of quantum numbers `l` and `m`. The visualization is generated using Plotly's 3D surface plotting capabilities, allowing for intuitive exploration of the angular part of solutions to the Laplace and Schrödinger equations in spherical coordinates.
 
 ## 📁 Structure
 
