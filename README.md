@@ -9,7 +9,9 @@ The script computes and renders spherical harmonics \( Y_l^m(\theta, \phi) \) fo
 ## 📁 Structure
 
 ├── SphericalHarmonics.py
+
 ├── README.md
+
 ├── requirements.txt
 
 
